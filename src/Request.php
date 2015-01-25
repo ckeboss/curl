@@ -93,7 +93,7 @@ class Request implements RequestInterface
      */
     public function __destruct()
     {
-        if($this->handle) {
+        if(is_a($this->handle, 'curl')) {
             curl_close($this->handle);
         }
     }
